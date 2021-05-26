@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -18,13 +17,12 @@ namespace TransportManagementSystem.Controllers
         {
             _context = context;
         }
-       // [Authorize]
+
         // GET: Employees
         public async Task<IActionResult> Index()
         {
             return View(await _context.Employees.ToListAsync());
         }
-        //[Authorize]
 
         // GET: Employees/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -44,7 +42,6 @@ namespace TransportManagementSystem.Controllers
             return View(employee);
         }
 
-        //[Authorize]
         // GET: Employees/Create
         public IActionResult Create()
         {
@@ -54,10 +51,9 @@ namespace TransportManagementSystem.Controllers
         // POST: Employees/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmpId,FirstName,LastName,Age,Gender,Address,Loacation,PhoneNumber")] Employee employee)
+        public async Task<IActionResult> Create([Bind("EmpId,FirstName,LastName,Gender,Age,DateOfBirth,Address,Location,PhoneNumber")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +63,7 @@ namespace TransportManagementSystem.Controllers
             }
             return View(employee);
         }
-        //[Authorize]
+
         // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -83,13 +79,13 @@ namespace TransportManagementSystem.Controllers
             }
             return View(employee);
         }
-        //[Authorize]
+
         // POST: Employees/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmpId,FirstName,LastName,Age,Gender,Address,Loacation,PhoneNumber")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("EmpId,FirstName,LastName,Gender,Age,DateOfBirth,Address,Location,PhoneNumber")] Employee employee)
         {
             if (id != employee.EmpId)
             {
@@ -118,7 +114,7 @@ namespace TransportManagementSystem.Controllers
             }
             return View(employee);
         }
-      //  [Authorize]
+
         // GET: Employees/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -136,7 +132,7 @@ namespace TransportManagementSystem.Controllers
 
             return View(employee);
         }
-       // [Authorize]
+
         // POST: Employees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

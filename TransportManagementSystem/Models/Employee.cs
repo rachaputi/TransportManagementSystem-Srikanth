@@ -13,34 +13,45 @@ namespace TransportManagementSystem.Models
         [Key]
         public int EmpId { get; set; }
 
-
+        [Required(ErrorMessage = "Please enter First Name") ]
         [Column(TypeName = "nvarchar(100)")]
-        [Required]
         public string FirstName { get; set; }
 
 
+
+        [Required(ErrorMessage = "Last Name Cannot be Empty") ]
         [Column(TypeName = "nvarchar(100)")]
-        [Required]
         public string LastName { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage ="Gender is Required") ]
         public string Gender { get; set; }
-        [Required]
+
+
+
         [Column(TypeName = "int")]
+        [Required(ErrorMessage = "Age Cannot be Null")]
         public int Age { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage = "please Enter Date of Birth")]
         public DateTime DateOfBirth { get; set; }
 
-        [Required]
+
+
+        [Required(ErrorMessage = "please enter  your Address")]
         public string Address { get; set; }
 
 
-        [Required]
-        public string Loacation { get; set; }
+       
+        [Required(ErrorMessage = "please enter  your Map location")]
+        public string Location { get; set; }
 
 
-        [Required]
+        [Required(ErrorMessage = "phone number is required")]
+        [Column(TypeName = "nchar(10)")]
         public int PhoneNumber { get; set; }
     }
 }

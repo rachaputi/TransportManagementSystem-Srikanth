@@ -10,19 +10,41 @@ namespace TransportManagementSystem.Models
     {
         [Key]
         public int VehicleNumber { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "please enter vehicle capacity")]
         public int Capacity { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "please enter Available Seats")]
         public int AvailableSeats { get; set; }
-        [Required]
+       
+
+        [Required(ErrorMessage = "please select yes/no")]
         public string Operable { get; set; }
-        [Required]
+
+
+
+        [Required(ErrorMessage = "please select yes/no")]
         public String IsAc { get; set; }
-        [Required]
+
+
+        [Required(ErrorMessage = "please enter Route Number")]
         public int RouteNumber { get; set; }
-        [Required]
-        public DateTime ArrivalTime { get; set; }
-        [Required]
-        public DateTime DepatureTime { get; set; }
+
+
+       // [Required(ErrorMessage = "please enter Arrival Time")]
+        public DateTime MorningShiftArrivalTime { get; set; }
+
+
+        //[Required(ErrorMessage = "please enter Depatute Number")]
+        public DateTime MorningShiftDepatureTime { get; set; }
+
+        //[Required(ErrorMessage = "please enter Arrival Time")]
+        public DateTime EveningShiftArrivalTime { get; set; }
+
+
+      //  [Required(ErrorMessage = "please enter Depatute Number")]
+        public DateTime EveningShiftDepatureTime { get; set; }
     }
 }

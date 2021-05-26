@@ -22,31 +22,59 @@
                 <input asp-for="AvailableSeats" class="form-control" />
                 <span asp-validation-for="AvailableSeats" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div>
                 <label asp-for="Operable" class="control-label"></label>
-                <input asp-for="Operable" class="form-control" />
+                <select name="Operable" id="Operable ">
+                    <option class="form-control" value="Yes">Yes</option>
+                    <option class="form-control" value="No">No</option>
+                </select>
                 <span asp-validation-for="Operable" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div>
                 <label asp-for="IsAc" class="control-label"></label>
-                <input asp-for="IsAc" class="form-control" />
+                <select name="IsAc" id="IsAc">
+                    <option class="form-control" value="Yes">Yes</option>
+                    <option class="form-control" value="No">No</option>
+                </select>
                 <span asp-validation-for="IsAc" class="text-danger"></span>
             </div>
+
+
             <div class="form-group">
                 <label asp-for="RouteNumber" class="control-label"></label>
                 <input asp-for="RouteNumber" class="form-control" />
                 <span asp-validation-for="RouteNumber" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ArrivalTime" class="control-label"></label>
-                <input asp-for="ArrivalTime" class="form-control" />
-                <span asp-validation-for="ArrivalTime" class="text-danger"></span>
+
+            <div>
+                <h1>Morning Shift</h1>
+                <div class="form-group">
+                    <label asp-for="MorningShiftArrivalTime" class="control-label"></label>
+                    <input asp-for="MorningShiftArrivalTime" class="form-control" />
+                    <span asp-validation-for="MorningShiftArrivalTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MorningShiftDepatureTime" class="control-label"></label>
+                    <input asp-for="MorningShiftDepatureTime" class="form-control" />
+                    <span asp-validation-for="MorningShiftDepatureTime" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DepatureTime" class="control-label"></label>
-                <input asp-for="DepatureTime" class="form-control" />
-                <span asp-validation-for="DepatureTime" class="text-danger"></span>
+            <div>
+                <h1>Evening Shift</h1>
+                <div class="form-group">
+                    <label asp-for="EveningShiftArrivalTime" class="control-label"></label>
+                    <input asp-for="EveningShiftArrivalTime" class="form-control" />
+                    <span asp-validation-for="EveningShiftArrivalTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EveningShiftDepatureTime" class="control-label"></label>
+                    <input asp-for="EveningShiftDepatureTime" class="form-control" />
+                    <span asp-validation-for="EveningShiftDepatureTime" class="text-danger"></span>
+                </div>
             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

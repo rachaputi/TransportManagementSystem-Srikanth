@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TransportManagementSystem.Models;
 
 namespace TransportManagementSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210525154616_validation")]
+    partial class validation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,7 +56,7 @@ namespace TransportManagementSystem.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nchar(10)");
+                        .HasColumnType("char(10)");
 
                     b.HasKey("EmpId");
 
@@ -99,27 +101,21 @@ namespace TransportManagementSystem.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("ArrivalTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("AvailableSeats")
                         .HasColumnType("int");
 
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EveningShiftArrivalTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("EveningShiftDepatureTime")
+                    b.Property<DateTime>("DepatureTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("IsAc")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("MorningShiftArrivalTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("MorningShiftDepatureTime")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Operable")
                         .IsRequired()

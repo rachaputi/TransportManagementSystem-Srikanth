@@ -28,10 +28,16 @@
                 @Html.DisplayNameFor(model => model.RouteNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ArrivalTime)
+                @Html.DisplayNameFor(model => model.MorningShiftArrivalTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DepatureTime)
+                @Html.DisplayNameFor(model => model.MorningShiftDepatureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EveningShiftDepatureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EveningShiftDepatureTime)
             </th>
             <th></th>
         </tr>
@@ -55,10 +61,16 @@
                 @Html.DisplayFor(modelItem => item.RouteNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ArrivalTime)
+                @Html.DisplayFor(modelItem => item.MorningShiftArrivalTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DepatureTime)
+                @Html.DisplayFor(modelItem => item.MorningShiftDepatureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EveningShiftArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EveningShiftDepatureTime)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.VehicleNumber">Edit</a> |
